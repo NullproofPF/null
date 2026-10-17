@@ -1,0 +1,13 @@
+.env*
+!.env.example
+node_modules
+.next
+artifacts/local
+tsconfig.tsbuildinfo
+program/target
+nullpk.txt
+*.pk
+*pk.txt
+tools/shots/
+artifacts/registry-export-*
+git.txt

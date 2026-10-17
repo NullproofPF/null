@@ -1,0 +1,13 @@
+name = "nullproof-bridge"
+main = "worker.js"
+compatibility_date = "2026-09-01"
+workers_dev = false
+account_id = "c771a6d49140fb4b62b5fa0c9f8bcbca"
+
+[[routes]]
+pattern = "nullproof.lol/*"
+zone_name = "nullproof.lol"
+
+[[routes]]
+pattern = "www.nullproof.lol/*"
+zone_name = "nullproof.lol"

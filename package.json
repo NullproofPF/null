@@ -1,0 +1,53 @@
+{
+  "name": "project-null",
+  "version": "0.1.0",
+  "private": true,
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "node server.mjs",
+    "lint": "eslint",
+    "typecheck": "tsc --noEmit -p tsconfig.json",
+    "test": "bash scripts/test.sh",
+    "fixtures": "tsx scripts/gen-fixtures.ts",
+    "vk": "tsx scripts/gen-verifying-key.ts && cd program && cargo fmt --all",
+    "demo:e2e": "tsx --env-file=.env.local scripts/demo-e2e.ts",
+    "program:build": "bash scripts/program-build.sh",
+    "program:test": "bash scripts/program-test.sh"
+  },
+  "dependencies": {
+    "@noble/curves": "^2.4.0",
+    "@noble/hashes": "^2.4.0",
+    "@semaphore-protocol/group": "^4.14.4",
+    "@semaphore-protocol/identity": "^4.14.4",
+    "@semaphore-protocol/proof": "^4.14.4",
+    "@semaphore-protocol/utils": "^4.14.4",
+    "@solana/web3.js": "^1.99.0",
+    "bs58": "^6.0.0",
+    "next": "16.4.2",
+    "pg": "^8.23.1",
+    "react": "19.3.0",
+    "react-dom": "19.3.0",
+    "snarkjs": "^0.7.6",
+    "zod": "^4.6.7"
+  },
+  "devDependencies": {
+    "@tailwindcss/turbopack": "^4",
+    "@types/node": "^20",
+    "@types/pg": "^8.23.1",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "@types/snarkjs": "^0.7.9",
+    "eslint": "^9",
+    "eslint-config-next": "16.4.2",
+    "playwright": "^1.64.1",
+    "tailwindcss": "^4",
+    "tsx": "^4.23.15",
+    "typescript": "^5",
+    "vite": "^8.3.4",
+    "vitest": "^5.0.5"
+  }
+}

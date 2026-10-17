@@ -1,0 +1,123 @@
+{
+  "generatedAt": "2026-10-17T10:26:22.296Z",
+  "cluster": "devnet",
+  "programId": "EeESX96fLQvMgRLWU5Fm1HFMofiSNPeoyymCWLAsSJrS",
+  "group": {
+    "slug": "null-genesis",
+    "pda": "CbnkwyAzw7NgvnV7hx4Q2NHoTGUH4YSMApW8eZExEVUP",
+    "root": "052edb3026f414dc4d053486a24320a337823d03855396c24efde4feec106d61",
+    "members": 2
+  },
+  "scopes": {
+    "vote": "DsbGuiyuGFboa3xNddYU1JGahNCv9fX7R8YhpgMBfmWF",
+    "access": "7Y7fyfC6w3rM1XNmwoWkrz4B1s5opdpBfT4JPyN27Ei6"
+  },
+  "spentSol": 0.01616392,
+  "evidence": [
+    {
+      "step": "1 administrator creates NULL GENESIS",
+      "outcome": "ok",
+      "detail": "group PDA CbnkwyAzw7NgvnV7hx4Q2NHoTGUH4YSMApW8eZExEVUP"
+    },
+    {
+      "step": "scopes configured",
+      "outcome": "ok",
+      "detail": "genesis-vote (one-time) DsbGuiyuGFboa3xNddYU1JGahNCv9fX7R8YhpgMBfmWF; genesis-access (multi-use) 7Y7fyfC6w3rM1XNmwoWkrz4B1s5opdpBfT4JPyN27Ei6"
+    },
+    {
+      "step": "2 administrator generates invitations",
+      "outcome": "ok",
+      "detail": "2 single-use codes minted (hashes stored only)"
+    },
+    {
+      "step": "3 alice creates identity",
+      "outcome": "ok",
+      "detail": "commitment 7240652376752975420566778976390291415482511820120798632714973487611393853150"
+    },
+    {
+      "step": "4 bob creates identity",
+      "outcome": "ok",
+      "detail": "commitment 4191303984200968211715294924933090105901340547548750836923649673552814708195"
+    },
+    {
+      "step": "5 alice and bob redeem invitations",
+      "outcome": "ok",
+      "detail": "leaf 0 and leaf 1, pending root publication"
+    },
+    {
+      "step": "invitation reuse",
+      "outcome": "rejected",
+      "detail": "409 invitation code already used"
+    },
+    {
+      "step": "unknown invitation",
+      "outcome": "rejected",
+      "detail": "404 invitation code not recognized for this group"
+    },
+    {
+      "step": "6 administrator publishes root",
+      "outcome": "ok",
+      "detail": "root 052edb3026f414dc4d053486a24320a337823d03855396c24efde4feec106d61 (2 members)",
+      "signature": "4xM322yjnowtjWHB7eFgZZTajygYMeawQQZ7L4jLtTKNUb69BToU4893qK2suH3GmA2bh4wis4723R7QTN9JRr1N",
+      "explorerUrl": "https://explorer.solana.com/tx/4xM322yjnowtjWHB7eFgZZTajygYMeawQQZ7L4jLtTKNUb69BToU4893qK2suH3GmA2bh4wis4723R7QTN9JRr1N?cluster=devnet"
+    },
+    {
+      "step": "7-9 alice proves membership (genesis-vote)",
+      "outcome": "ok",
+      "detail": "proved in 644 ms; receipt BYPv8s1NuppL5C2zXDY2sy2vY4RRZ2544mgYhrfTqP6b index 0; nullifier 2ca3f288aa1bc5c8441870a4b1dd609facd73e87aad9c5d4fb6493053bae6493",
+      "signature": "26rqkWWMLtoSWqbnfHvYwZkgLywnkCkHweTZdrm1nTjEpy6gPkLe5oJtDSXVVTUkAMJt4qH6Qbif9TfLNF59M3ML",
+      "explorerUrl": "https://explorer.solana.com/tx/26rqkWWMLtoSWqbnfHvYwZkgLywnkCkHweTZdrm1nTjEpy6gPkLe5oJtDSXVVTUkAMJt4qH6Qbif9TfLNF59M3ML?cluster=devnet"
+    },
+    {
+      "step": "replay of the same proof",
+      "outcome": "rejected",
+      "detail": "409 nullifier already consumed in this one-time scope"
+    },
+    {
+      "step": "second action in one-time scope",
+      "outcome": "rejected",
+      "detail": "409 nullifier already consumed in this one-time scope"
+    },
+    {
+      "step": "bob proves membership (genesis-vote)",
+      "outcome": "ok",
+      "detail": "receipt E89MNedLLm9bp6mXR97EjUBa5VsuCZjFkFHwhiKLvTYg; nullifier 2be131737366d2a1f54e92563a467e5aac15b761fbcab9ae5df1380d37f33a0a",
+      "signature": "2n2E2kJQaikXqDPLgaa93oSaxQLXdr14XBXpEsrQVWxSaFNMFp2QT847697R5GKyAawPQeCpfRPcmvPsLKTLu4vC",
+      "explorerUrl": "https://explorer.solana.com/tx/2n2E2kJQaikXqDPLgaa93oSaxQLXdr14XBXpEsrQVWxSaFNMFp2QT847697R5GKyAawPQeCpfRPcmvPsLKTLu4vC?cluster=devnet"
+    },
+    {
+      "step": "alice acts in a new scope (genesis-access)",
+      "outcome": "ok",
+      "detail": "receipt C9DZVtGayfDv8rReQUC4iDsayBSYacBBRUxUmF3oDGcE; nullifier 287459cb6fa51fbc4ba63085d44e9cbe7e39fdf8e0331b286535bfc934c5049b differs from vote nullifier",
+      "signature": "ivArYMBkwigWRK1qE9mKdfoG21aZa5R4FxuLNvwtbAMHREm9bic3T7g4euNZEduzn8qc6LNqi34bMnQjFiAUd5j",
+      "explorerUrl": "https://explorer.solana.com/tx/ivArYMBkwigWRK1qE9mKdfoG21aZa5R4FxuLNvwtbAMHREm9bic3T7g4euNZEduzn8qc6LNqi34bMnQjFiAUd5j?cluster=devnet"
+    },
+    {
+      "step": "alice repeats in multi-use scope",
+      "outcome": "ok",
+      "detail": "receipt 3tpnq1kYiRorJttgqtxeeTaGhgiprL8SERpw6kFNrXSP; same nullifier counted again",
+      "signature": "KuWfHCkJHL7e9jrbDFHtBPcvw721U2Ei4EC7voN2MwLvAmnFsczrCTJA4Y7A1t5eeDQrDGyxbY8SVn7LnKSeRUp",
+      "explorerUrl": "https://explorer.solana.com/tx/KuWfHCkJHL7e9jrbDFHtBPcvw721U2Ei4EC7voN2MwLvAmnFsczrCTJA4Y7A1t5eeDQrDGyxbY8SVn7LnKSeRUp?cluster=devnet"
+    },
+    {
+      "step": "nonmember proof generation",
+      "outcome": "rejected",
+      "detail": "The leaf at index '-1' does not exist in this tree"
+    },
+    {
+      "step": "forged root",
+      "outcome": "rejected",
+      "detail": "409 merkle root is not published for this group (refresh the member list and prove again)"
+    },
+    {
+      "step": "tampered proof (relayer)",
+      "outcome": "rejected",
+      "detail": "400 proof failed off-chain verification"
+    },
+    {
+      "step": "mismatched proof submitted directly to the program",
+      "outcome": "rejected",
+      "detail": "Simulation failed. \nMessage: Transaction simulation failed: Error processing Instruction 1: custom program error: 0x1777. \nLogs: \n[\n  \"Program ComputeBudget111111111111111111111111111111 success\",\n  \"Program EeESX96fLQvMgRLWU5Fm1HFMofiSNPeoyymCWLAsSJrS invoke [1]\",\n  \"Program 11111111111111111111111111111111 invoke [2]\",\n  \"Program 11111111111111111111111111111111 success\",\n  \"Program 11111111111111111111111111111111 invoke [2]\",\n  \"Program 11111111111111111111111111111111 success\",\n  \"Program log: groth16 verification failed\",\n  \"Program log: AnchorError occurred. Error Code: InvalidProof. Error Number: 6007. Error Message: Groth16 proof is invalid.\",\n  \"Program EeESX96fLQvMgRLWU5Fm1HFMofiSNPeoyymCWLAsSJrS consumed 125705 of 399850 compute units\",\n  \"Program EeESX96fLQvMgRLWU5Fm1HFMofiSNPeoyymCWLAsSJrS failed: custom program error: 0x1777\"\n]. \nCatch the `SendTransactionError` and call `getLogs()` on it for full details."
+    }
+  ]
+}
