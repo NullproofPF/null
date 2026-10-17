@@ -27,7 +27,7 @@ Current deployments of `EeESX96fLQvMgRLWU5Fm1HFMofiSNPeoyymCWLAsSJrS` (same prog
 
 | Cluster | Upgrade authority | Deploy tx |
 |---|---|---|
-| mainnet-beta (live site) | `7S8uGPtrJiLx2R9PLuX6AgZY2T8nNA7NLVJZAd55DWZN` | `4qBcs5qF4LZUHb1t6ZcDFRB7BkUvR2P9ghXt4oUXqUdk8FvoiYxMexsvbCBQJVUtwTJXgjM2AqpaqMYan2DWyNw6` |
+| mainnet (live site) | `7S8uGPtrJiLx2R9PLuX6AgZY2T8nNA7NLVJZAd55DWZN` | `4qBcs5qF4LZUHb1t6ZcDFRB7BkUvR2P9ghXt4oUXqUdk8FvoiYxMexsvbCBQJVUtwTJXgjM2AqpaqMYan2DWyNw6` |
 | devnet (test) | `FK8M3ZkDiLu6wQNZtc7cK2R23dYrB2SPuZfJrXveBtCZ` | `5GyvWZUKC5a9ZZHUycyic869ESYXEoDLHGCcdfpZDDfgrz8eKdJ6TeAjYakADjHENFXZHUkZZkpiVtdsiTQKAhC3` |
 
 ## 2. Keys
@@ -106,11 +106,10 @@ Public (inlined at build): `NEXT_PUBLIC_SOLANA_RPC_URL`, `NEXT_PUBLIC_SOLANA_CLU
 - Receipts created by third parties (anyone can call `verify_proof`) are picked up by the explorer's chain sync.
 - To revoke a member: rebuild without the commitment and publish; see `docs/THREAT_MODEL.md` for the validity window.
 
-## 8. Before anyone relies on NULL for something that matters
+## 8. Hardening roadmap
 
-Specialized audit of program, relayer and client; freeze or multisig the upgrade authority; relayer monitoring and
-funding alerts; rate limits tuned; independent issuer governance. The protocol runs on mainnet as an experiment and the
-UI says so on every page.
+Move the upgrade authority to a multisig with a timelock; relayer monitoring and funding alerts; rate limits tuned to
+real traffic; independent issuer governance; verifiable builds.
 
 ## Custom domain (nullproof.lol)
 

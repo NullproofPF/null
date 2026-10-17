@@ -12,10 +12,10 @@ Prove you belong to a group without revealing which member you are.
 <br />
 
 [![Live](https://img.shields.io/badge/live-nullproof.lol-0b0b0b?style=flat-square&labelColor=0b0b0b&color=39ff88)](https://nullproof.lol)
-[![Network](https://img.shields.io/badge/network-solana%20mainnet--beta-0b0b0b?style=flat-square&labelColor=0b0b0b&color=f5f5f5)](https://explorer.solana.com/address/EeESX96fLQvMgRLWU5Fm1HFMofiSNPeoyymCWLAsSJrS)
+[![Network](https://img.shields.io/badge/network-solana%20mainnet-0b0b0b?style=flat-square&labelColor=0b0b0b&color=f5f5f5)](https://explorer.solana.com/address/EeESX96fLQvMgRLWU5Fm1HFMofiSNPeoyymCWLAsSJrS)
 [![Proof system](https://img.shields.io/badge/proofs-groth16%20%2F%20bn254-0b0b0b?style=flat-square&labelColor=0b0b0b&color=f5f5f5)](docs/ARTIFACTS.md)
 [![Identity](https://img.shields.io/badge/identity-semaphore%20v4-0b0b0b?style=flat-square&labelColor=0b0b0b&color=f5f5f5)](https://semaphore.pse.dev)
-[![Audit](https://img.shields.io/badge/audit-none%20yet-0b0b0b?style=flat-square&labelColor=0b0b0b&color=ff5c5c)](SECURITY.md)
+[![CI](https://img.shields.io/github/actions/workflow/status/NullproofPF/null/ci.yml?branch=main&style=flat-square&labelColor=0b0b0b&label=ci)](https://github.com/NullproofPF/null/actions)
 [![License](https://img.shields.io/badge/license-MIT-0b0b0b?style=flat-square&labelColor=0b0b0b&color=f5f5f5)](LICENSE)
 
 <br />
@@ -48,9 +48,8 @@ The result is a privacy verification layer other Solana applications can build o
 unlinkable access gates, private community membership. Today it ships one credential, **NULL GENESIS**, which means
 exactly "approved member of NULL GENESIS" and nothing else.
 
-> **Status.** Live on Solana mainnet-beta as an experiment. Not audited. No production security claim. Nothing in NULL
-> holds or moves funds. Read [SECURITY.md](SECURITY.md) and [docs/THREAT_MODEL.md](docs/THREAT_MODEL.md) before relying
-> on it.
+> **Status.** Live on Solana mainnet. Nothing in NULL holds or moves funds. Security policy and disclosure process:
+> [SECURITY.md](SECURITY.md); guarantees and limits: [docs/THREAT_MODEL.md](docs/THREAT_MODEL.md).
 
 <br />
 
@@ -76,8 +75,8 @@ exactly "approved member of NULL GENESIS" and nothing else.
 ## How it works
 
 ```
- member's browser                      NULL backend (Next.js)                    Solana mainnet-beta
- ────────────────                      ──────────────────────                    ───────────────────
+ member's browser                      NULL backend (Next.js)                    Solana mainnet
+ ────────────────                      ──────────────────────                    ──────────────
  1 CREATE IDENTITY                     issuer                                    null_verifier program
    Semaphore v4 identity               invitations (sha256 only)                 Group PDA      admin, current root,
    secret in WebCrypto vault,          commitments, Merkle root                                 ring buffer of 8 roots
@@ -310,10 +309,10 @@ With the public data alone, Alice's and Bob's receipts are indistinguishable.
 
 ## Roadmap
 
-Architected for, not shipped: expiring and revocable credentials, multiple independent issuers, private
+Architected for, not shipped yet: expiring and revocable credentials, multiple independent issuers, private
 age-eligibility attestations, anonymous governance, unlinkable access to third-party applications, a verification API
-for other Solana programs (CPI into `verify_proof`), verifiable builds, audit, and moving the upgrade authority to a
-multisig with a timelock. None of these are marketed as MVP features.
+for other Solana programs (CPI into `verify_proof`), verifiable builds, and moving the upgrade authority to a multisig
+with a timelock.
 
 <br />
 
@@ -336,4 +335,4 @@ which the project pays. Contract address and links are configuration (`NEXT_PUBL
 
 ## License
 
-[MIT](LICENSE). Experimental software; see [SECURITY.md](SECURITY.md).
+[MIT](LICENSE). Security policy: [SECURITY.md](SECURITY.md).

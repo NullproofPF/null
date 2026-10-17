@@ -50,7 +50,7 @@ export default function Home() {
             on-chain program using Solana&apos;s alt_bn128 syscalls.
           </p>
           <p>
-            The MVP credential means exactly one thing: &quot;approved member of NULL GENESIS&quot;. It does not prove unique
+            The NULL GENESIS credential means exactly one thing: &quot;approved member of NULL GENESIS&quot;. It does not prove unique
             humanity, legal identity, age, or anything the issuer did not check.
           </p>
           <p className="mono text-[0.7rem] tracking-[0.12em] text-muted-2">

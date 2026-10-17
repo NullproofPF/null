@@ -5,6 +5,7 @@
 const CA = process.env.NEXT_PUBLIC_TOKEN_CA;
 const CA_NOTE = process.env.NEXT_PUBLIC_TOKEN_NOTE;
 const X_URL = process.env.NEXT_PUBLIC_X_URL;
+import { clusterLabel } from "@/lib/cluster";
 const LINKS = [
   { label: "PUMP.FUN", href: process.env.NEXT_PUBLIC_PUMP_URL },
   { label: "DOCS", href: process.env.NEXT_PUBLIC_DOCS_URL },
@@ -27,7 +28,7 @@ export function ProjectFooter() {
     <footer className="border-t border-line">
       <div className="mono mx-auto flex w-full max-w-6xl flex-col gap-3 px-5 py-6 text-[0.68rem] tracking-[0.12em] text-muted">
         <div className="flex flex-wrap items-center justify-between gap-3">
-          <span>NULL PROTOCOL / {cluster.toUpperCase()} / EXPERIMENTAL. NOT AUDITED.</span>
+          <span>NULL PROTOCOL / SOLANA {clusterLabel(cluster)}</span>
           <div className="flex items-center gap-5">
             {X_URL ? (
               <a

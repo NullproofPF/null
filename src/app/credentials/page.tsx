@@ -56,7 +56,7 @@ export default function CredentialsPage() {
     <div className="mx-auto w-full max-w-4xl px-5 py-14">
       <PageHeader kicker="02 / AUTHORIZE" title="CREDENTIALS">
         An issuer adds public commitments to a Merkle tree and publishes the root to the Solana program. The issuer never
-        receives a private key. For the MVP there is one group, NULL GENESIS, and membership means exactly &quot;approved
+        receives a private key. Today there is one group, NULL GENESIS, and membership means exactly &quot;approved
         by the NULL GENESIS issuer&quot;. Nothing more is attested.
       </PageHeader>
 

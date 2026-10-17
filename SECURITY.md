@@ -1,8 +1,8 @@
 # Security policy
 
-NULL is experimental cryptographic infrastructure running on Solana mainnet-beta. It has **not** been audited. Nothing in
-NULL holds or moves funds, but a verifier bug could let a non-member produce an accepted proof, and a client bug could
-leak an identity secret. We want to hear about both.
+NULL is cryptographic infrastructure running on Solana mainnet. Nothing in NULL holds or moves funds, but a verifier bug
+could let a non-member produce an accepted proof, and a client bug could leak an identity secret. We want to hear about
+both.
 
 ## Reporting a vulnerability
 
@@ -27,7 +27,9 @@ issues, the exact public inputs and proof bytes involved. You should hear back w
 - The Semaphore v4 circuit and its trusted setup (report upstream to PSE).
 - Denial of service against the free public RPC endpoint the browser uses.
 
-## Keys and upgrade authority
+## Keys, upgrade authority and audit status
 
-The program is upgradeable by `7S8uGPtrJiLx2R9PLuX6AgZY2T8nNA7NLVJZAd55DWZN`. Until an audit is done and the authority is
-frozen or moved to a multisig, treat the deployed verifier as trusted software, not trustless infrastructure.
+The program is upgradeable by `7S8uGPtrJiLx2R9PLuX6AgZY2T8nNA7NLVJZAd55DWZN`; moving it to a multisig with a timelock is
+on the roadmap. Independent third-party audit: no report has been published for this codebase yet. The program and
+client are covered by the test suites described in the README, and this section is updated the day an audit report
+exists.

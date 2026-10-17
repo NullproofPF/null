@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import { getHealth, type HealthReport } from "@/lib/client/api";
+import { clusterLabel } from "@/lib/cluster";
 
 /**
  * The landing-page terminal. STATUS reads OPERATIONAL only when /api/health
@@ -34,7 +35,7 @@ export function LiveTerminal() {
   }, []);
 
   const programId = report?.programId ?? process.env.NEXT_PUBLIC_NULL_PROGRAM_ID ?? "EeESX96fLQvMgRLWU5Fm1HFMofiSNPeoyymCWLAsSJrS";
-  const cluster = (report?.cluster ?? process.env.NEXT_PUBLIC_SOLANA_CLUSTER ?? "mainnet-beta").toUpperCase();
+  const cluster = clusterLabel(report?.cluster ?? process.env.NEXT_PUBLIC_SOLANA_CLUSTER);
   const status = report ? report.status : error ? "UNREACHABLE" : "CHECKING";
   const failing = report ? Object.entries(report.checks).filter(([, c]) => !c.ok) : [];
 

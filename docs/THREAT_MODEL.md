@@ -1,8 +1,8 @@
 # Threat model
 
 NULL is cryptographic infrastructure, not a website with a privacy label. This document states what each party can
-and cannot do, what the software enforces, and what remains open. Live on Solana mainnet-beta since 2026-10-17 as an
-experiment; no audit has been performed and no production security claim is made. Nothing in NULL holds or moves funds.
+and cannot do, what the software enforces, and what remains open. Live on Solana mainnet since 2026-10-17. Nothing in
+NULL holds or moves funds.
 
 ## Parties
 
@@ -74,7 +74,7 @@ Groth16 soundness relies on the Semaphore v4 trusted setup (see `docs/ARTIFACTS.
 
 ### Program upgrade authority
 
-The program is upgradeable by the deployer key (`7S8uGPtrJiLx2R9PLuX6AgZY2T8nNA7NLVJZAd55DWZN` on mainnet). A malicious upgrade could accept anything. Before anyone relies on NULL for something that matters: audit, then freeze or hand the authority to a multisig with a timelock.
+The program is upgradeable by the deployer key (`7S8uGPtrJiLx2R9PLuX6AgZY2T8nNA7NLVJZAd55DWZN` on mainnet). A malicious upgrade could accept anything, so users trust the key holder today. Planned mitigation: move the authority to a multisig with a timelock, then freeze it.
 
 ## Root lifecycle
 

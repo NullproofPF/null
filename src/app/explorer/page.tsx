@@ -4,6 +4,7 @@ import { Suspense, useEffect, useState } from "react";
 import { useSearchParams } from "next/navigation";
 import { ExternalLink, Field, Hash, Notice, PageHeader } from "@/components/ui";
 import { api, getExplorer, type ExplorerSnapshot } from "@/lib/client/api";
+import { clusterLabel } from "@/lib/cluster";
 
 interface ReceiptView {
   receiptPda: string;
@@ -132,7 +133,7 @@ export default function ExplorerPage() {
             <Stat label="COMPLETED VERIFICATIONS" value={snap.totalVerifications} />
             <Stat label="REGISTERED GROUPS" value={snap.groupCount} />
             <Stat label="PROTOCOL VERSION" value={snap.protocolVersion} />
-            <Stat label="NETWORK" value={snap.cluster.toUpperCase()} />
+            <Stat label="NETWORK" value={`SOLANA ${clusterLabel(snap.cluster)}`} />
           </section>
 
           <section className="panel mt-8 p-6">

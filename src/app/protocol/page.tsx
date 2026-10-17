@@ -1,8 +1,9 @@
 import { ExternalLink, PageHeader } from "@/components/ui";
 import { ARTIFACT_SHA256, MERKLE_TREE_DEPTH, PROTOCOL_VERSION, SEMAPHORE_ARTIFACT_VERSION, SEMAPHORE_PACKAGE_VERSION } from "@/lib/zk/constants";
+import { clusterLabel } from "@/lib/cluster";
 
 const PROGRAM_ID = process.env.NEXT_PUBLIC_NULL_PROGRAM_ID ?? "EeESX96fLQvMgRLWU5Fm1HFMofiSNPeoyymCWLAsSJrS";
-const CLUSTER = process.env.NEXT_PUBLIC_SOLANA_CLUSTER ?? "mainnet-beta";
+const CLUSTER = clusterLabel(process.env.NEXT_PUBLIC_SOLANA_CLUSTER);
 
 function Section({ title, children }: { title: string; children: React.ReactNode }) {
   return (
@@ -17,8 +18,7 @@ export default function ProtocolPage() {
   return (
     <div className="mx-auto w-full max-w-4xl px-5 py-14">
       <PageHeader kicker="SPECIFICATION" title="PROTOCOL">
-        What NULL verifies, what it does not, and how it can fail. Version {PROTOCOL_VERSION}. Experimental software on
-        Solana {CLUSTER}; no audit has been performed and no production security claim is made.
+        What NULL verifies, what it does not, and how it can fail. Version {PROTOCOL_VERSION}. Live on Solana {CLUSTER}.
       </PageHeader>
 
       <Section title="CRYPTOGRAPHY">
@@ -64,7 +64,7 @@ export default function ProtocolPage() {
         <p>
           &quot;The prover holds the secret of some commitment the NULL GENESIS issuer placed in the published root, and has not acted
           before in this one-time scope.&quot; It does not prove unique humanity, legal identity, age, residency or anything the issuer
-          did not check. The MVP issuer checks exactly one thing: possession of a valid single-use invitation.
+          did not check. The NULL GENESIS issuer checks exactly one thing: possession of a valid single-use invitation.
         </p>
       </Section>
 
@@ -113,11 +113,11 @@ export default function ProtocolPage() {
         </ul>
       </Section>
 
-      <Section title="ROADMAP (NOT MVP FEATURES)">
+      <Section title="ROADMAP">
         <p>
           Private age-eligibility attestations, anonymous governance, unlinkable application access, expiring or revocable
           credentials and third-party issuers all fit this architecture (new groups, new scopes, new issuers; some need additional
-          circuits). None of them ships today, and none should be marketed as if it did.
+          circuits). They arrive as new groups and issuers are added.
         </p>
         <p className="mono text-[0.68rem] text-muted-2">
           SOURCE AND DEVELOPER DOCS: <ExternalLink href={process.env.NEXT_PUBLIC_GITHUB_URL || "/"}>REPOSITORY</ExternalLink>
