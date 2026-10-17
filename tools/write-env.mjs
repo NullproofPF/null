@@ -44,7 +44,7 @@ if (fs.existsSync(HELIUS_KEY_FILE)) {
 set("NEXT_PUBLIC_SOLANA_RPC_URL", publicRpc);
 set("NEXT_PUBLIC_SOLANA_CLUSTER", cluster);
 set("NEXT_PUBLIC_NULL_PROGRAM_ID", "EeESX96fLQvMgRLWU5Fm1HFMofiSNPeoyymCWLAsSJrS");
-set("NEXT_PUBLIC_GITHUB_URL", current("NEXT_PUBLIC_GITHUB_URL") ?? "");
+set("NEXT_PUBLIC_GITHUB_URL", process.env.NULL_GITHUB_URL ?? current("NEXT_PUBLIC_GITHUB_URL") ?? "");
 set("NEXT_PUBLIC_DOCS_URL", current("NEXT_PUBLIC_DOCS_URL") ?? "/protocol");
 // Project links: pass NULL_TOKEN_CA / NULL_PUMP_URL / NULL_X_URL / NULL_TOKEN_NOTE to set or change them.
 for (const [envName, key] of [
